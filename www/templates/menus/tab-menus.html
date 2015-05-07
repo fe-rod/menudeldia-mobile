@@ -5,7 +5,7 @@
                 on-refresh="refreshMenu()">
         </ion-refresher>
         <ion-list can-swipe="true" ng-hide="geolocError">
-            <ion-item collection-repeat="menu in menus" class="item item-text-wrap item-avatar menu-list" href="#/tab/menu/{{menu.id}}"
+            <ion-item collection-repeat="menu in menus" class="item item-text-wrap item-avatar menu-list" href="#/app/menu/{{menu.id}}"
                       item-height="130px">
                 <img src="data:image/{{menu.logo.logoExtension}};base64,{{menu.logo.logoBase64}}" />
                 <div class="row">

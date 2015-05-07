@@ -234,3 +234,14 @@
 .bar-stable .button.button-clear {
     color: #fff;
 }
+
+/*SIDE MENU*/
+.side-menu{
+    background-color: #E4E4E4;
+}
+
+
+.side-menu .icon {
+    color: #F44336;
+}
+

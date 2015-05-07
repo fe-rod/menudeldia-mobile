@@ -30,27 +30,27 @@ angular.module('todayMenu', ['ionic', 'ngCordova'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: "/tab",
+  .state('app', {
+    url: "/app",
     abstract: true,
-    templateUrl: "templates/tabs.html"
+    templateUrl: "templates/menu.html"
   })
 
   // Each tab has its own nav history stack:
 
-      .state('tab.menus', {
+      .state('app.menus', {
           url: '/menus',
           views: {
-              'tab-menus': {
+              'menuContent': {
                   templateUrl: 'templates/menus/tab-menus.html',
                   controller: 'MenusCtrl'
               }
           }
       })
-      .state('tab.menu-detail', {
+      .state('app.menu-detail', {
           url: '/menu/:menuId',
           views: {
-              'tab-menus': {
+              'menuContent': {
                   templateUrl: 'templates/menus/menuDetail.html',
                   controller: 'MenuDetailCtrl'
               }
@@ -65,28 +65,28 @@ angular.module('todayMenu', ['ionic', 'ngCordova'])
               }
           }
       })
-      .state('tab.stores', {
+      .state('app.stores', {
           url: '/stores',
           views: {
-              'tab-stores': {
+              'menuContent': {
                   templateUrl: 'templates/stores/tab-stores.html',
                   controller: 'StoresCtrl'
               }
           }
       })
-      .state('tab.restaurants', {
-          url: '/stores/restaurants',
+      .state('app.restaurants', {
+          url: '/restaurants',
           views: {
-              'tab-stores': {
+              'menuContent': {
                   templateUrl: 'templates/restaurants/tab-restaurants.html',
                   controller: 'RestaurantsCtrl'
               }
           }
       })
-      .state('tab.store-detail', {
+      .state('app.store-detail', {
           url: '/store/:storeId/:distance',
           views: {
-              'tab-stores': {
+              'menuContent': {
                   templateUrl: 'templates/stores/store-detail.html',
                   controller: 'StoreDetailCtrl'
               }
@@ -100,10 +100,10 @@ angular.module('todayMenu', ['ionic', 'ngCordova'])
                   }); }
           }
       })
-      .state('tab.restaurant-detail', {
-          url: '/stores/restaurant/:restaurantId',
+      .state('app.restaurant-detail', {
+          url: '/restaurant/:restaurantId',
           views: {
-              'tab-stores': {
+              'menuContent': {
                   templateUrl: 'templates/restaurants/restaurant-detail.html',
                   controller: 'StoreDetailCtrl'
               }
@@ -118,37 +118,37 @@ angular.module('todayMenu', ['ionic', 'ngCordova'])
           }
       })
 
-      .state('tab.menuMap', {
+      .state('app.menuMap', {
           url: '/menuMap/:latitude/:longitude',
           views: {
-              'tab-menus': {
+              'menuContent': {
                   templateUrl: 'templates/map/map.html',
                   controller: 'MapCtrl'
               }
           }
       })
-      .state('tab.storeMap', {
+      .state('app.storeMap', {
           url: '/storeMap/:latitude/:longitude',
           views: {
-              'tab-stores': {
+              'menuContent': {
                   templateUrl: 'templates/map/map.html',
                   controller: 'MapCtrl'
               }
           }
       })
-      .state('tab.restaurantMap', {
+      .state('app.restaurantMap', {
           url: '/restaurantMap/:latitude/:longitude',
           views: {
-              'tab-stores': {
+              'menuContent': {
                   templateUrl: 'templates/map/map.html',
                   controller: 'MapCtrl'
               }
           }
       })
-      .state('tab.account', {
+      .state('app.account', {
           url: '/account',
           views: {
-              'tab-account': {
+              'menuContent': {
                   templateUrl: 'templates/account/tab-account.html',
                   controller: 'AccountCtrl'
               }
@@ -156,7 +156,7 @@ angular.module('todayMenu', ['ionic', 'ngCordova'])
       });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/menus');
+  $urlRouterProvider.otherwise('/app/menus');
 
   $ionicConfigProvider.platform.ios.backButton.text('Volver');
 
