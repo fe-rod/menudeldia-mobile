@@ -30,6 +30,10 @@
                 <!--</div>-->
                 <!--</ion-option-button>-->
             </ion-item>
+            <ion-item ng-if="menus.length == 0" class="menu-no-result item item-text-wrap">
+                <p class="no-result-title">Ups! No encontramos platos del d&iacute;a para hoy.</p>
+                <p>Estamos trabajando para conseguir los mejores platos cerca de vos.</p>
+            </ion-item>
         </ion-list>
         <div class="row" ng-if="geolocError">
             <div class="col">

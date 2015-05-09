@@ -245,3 +245,13 @@
     color: #F44336;
 }
 
+.menu-no-result p{
+    text-align: center;
+    font-size: 12px;
+}.menu-no-result .no-result-title{
+    font-size: 14px;
+   padding-bottom: 8px;
+}
+
+
+

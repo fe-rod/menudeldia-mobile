@@ -164,7 +164,7 @@ angular.module('todayMenu', ['ionic', 'ngCordova'])
 .constant('appConfig',
     {
         ver: '1.0.0',
-        //apiUrl: "http://localhost:42479/api/"
-        apiUrl: "http://mddservice.azurewebsites.net/api/"
+        apiUrl: "http://localhost:45291/api/"
+        //apiUrl: "http://mddservice.azurewebsites.net/api/"
     }
 );
