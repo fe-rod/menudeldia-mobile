@@ -6,22 +6,17 @@
         </ion-refresher>
         <ion-list can-swipe="true" ng-hide="geolocError">
             <ion-item collection-repeat="menu in menus" class="item item-text-wrap item-avatar menu-list" href="#/app/menu/{{menu.id}}"
-                      item-height="130px">
+                      item-height="120px">
                 <img src="data:image/{{menu.logo.logoExtension}};base64,{{menu.logo.logoBase64}}" />
-                <div class="row">
-                    <div class="col col-75">
-                        {{menu.name}}
-                    </div>
-                    <div class="col col-25 align-right">
-                        ${{menu.price}}
+                <div class="row menu-list-title">
+                    <div class="col">
+                        <p>{{menu.name}}</p>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row secondary-text">
                     <div class="col">
-                        <p>{{menu.nearestLocation.restaurantName}}</p>
-                        <p ng-show="menu.nearestLocation.distance>=0">
-                            {{menu.nearestLocation.distance | distance }}
-                        </p>
+                        <p><span class="small-price">${{menu.price}}</span></p>
+                        <p><span class="small-info">{{menu.nearestLocation.restaurantName}} a {{menu.nearestLocation.distance | distance }}</span></p>
                     </div>
                 </div>
                 <!--<ion-option-button class="favoriteMenu button-stable" ng-click="favorite(menu)">-->

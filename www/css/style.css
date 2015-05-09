@@ -94,7 +94,6 @@
 
 .menu-list .item-content {
     padding-right: 15px;
-    height: 130px;
 }
 
 .menuDetail .header-title{
@@ -253,5 +252,25 @@
    padding-bottom: 8px;
 }
 
+.item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content{
+    padding-left: 60px;
+}
+
+ .secondary-text p{
+     color: #a1a1a1;
+ }
+ 
+ .secondary-text span.small-info{
+     font-size: 90%;
+ }
+ 
+ .secondary-text span.info{
+     float: right;
+ }
+ 
+ .menu-list-title{
+     padding-bottom: 0;
+     padding-top: 0;
+ }
 
 
