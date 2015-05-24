@@ -37,7 +37,6 @@ angular.module('todayMenu')
                         });
                     },
                     function(){
-                        alert('Error');
                     }
                 );
             });
@@ -57,7 +56,6 @@ angular.module('todayMenu')
                         });
                     },
                     function(){
-                        alert('Error');
                     }
                 );
            });

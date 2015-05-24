@@ -7,7 +7,7 @@
         <ion-list can-swipe="true" ng-hide="geolocError">
             <ion-item collection-repeat="menu in menus" class="item item-text-wrap item-avatar menu-list" href="#/app/menu/{{menu.id}}"
                       item-height="120px">
-                <img src="data:image/{{menu.logo.logoExtension}};base64,{{menu.logo.logoBase64}}" />
+                <img class="square-image" src="data:image/{{menu.logo.logoExtension}};base64,{{menu.logo.logoBase64}}" />
                 <div class="row menu-list-title">
                     <div class="col">
                         <p>{{menu.name}}</p>
@@ -25,9 +25,14 @@
                 <!--</div>-->
                 <!--</ion-option-button>-->
             </ion-item>
-            <ion-item ng-if="menus.length == 0" class="menu-no-result item item-text-wrap">
+            <ion-item ng-if="menus.length == 0" class="item item-text-wrap item-icon-left">
+                <i class="icon ion-sad-outline"></i>
                 <p class="no-result-title">Ups! No encontramos platos del d&iacute;a para hoy.</p>
                 <p>Estamos trabajando para conseguir los mejores platos cerca de vos.</p>
+            </ion-item>
+            <ion-item ng-if="menus.length == 0" class="item item-text-wrap item-icon-left" ng-click="suggestModal.show()">
+                <i class="icon ion-chatbubble-working"></i>
+                <p>Mientras tanto ayudanos sugiri&eacute;nos locales que te gusten</p>
             </ion-item>
         </ion-list>
         <div class="row" ng-if="geolocError">

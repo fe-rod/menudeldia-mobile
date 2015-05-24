@@ -20,9 +20,9 @@ angular.module('todayMenu', ['ionic', 'ngCordova'])
     }
   });
 })
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider,$compileProvider) {
 
-.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
-
+$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.

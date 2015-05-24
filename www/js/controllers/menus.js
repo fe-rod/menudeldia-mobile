@@ -1,7 +1,7 @@
 angular.module('todayMenu')
 
     .controller('MenusCtrl', function($scope, $rootScope, $stateParams, Menus, $ionicPopover, $cordovaGeolocation,
-                                      $ionicLoading,$ionicPlatform, $log) {
+                                      $ionicLoading,$ionicPlatform, $log, $ionicModal, $cordovaDevice, $cordovaToast, Account) {
         const pageSize = 10;
         var pageCounter = 0;
 
@@ -84,6 +84,35 @@ angular.module('todayMenu')
                 $scope.$broadcast('scroll.refreshComplete');
             });
             });
+        }
+        
+        $ionicModal.fromTemplateUrl('templates/account/suggest.html', function($ionicModal) {
+            $scope.suggestModal = $ionicModal;
+            $scope.suggestions = {value: ''};
+        }, {
+            // Use our scope for the scope of the modal to keep it simple
+            scope: $scope,
+            // The animation we want to use for the modal entrance
+            animation: 'slide-in-up'
+        });
+        
+        $scope.sendSuggestions = function(){
+            $scope.suggestModal.hide();
+            $ionicPlatform.ready(function(){
+                var id = $cordovaDevice.getUUID();
+                Account.saveSuggestion($scope.suggestions.value, id).then(
+                    function(data){
+                        $scope.suggestions.value = '';
+                        $cordovaToast.showLongBottom('Gracias por enviarnos tus comentarios').then(function(success) {
+                            // success
+                        }, function (error) {
+                            // error
+                        });
+                    },
+                    function(){
+                    }
+                );
+           });
         }
     })
     .controller('MenuDetailCtrl', function($scope, $rootScope, $stateParams, Menus, data, $ionicLoading) {
