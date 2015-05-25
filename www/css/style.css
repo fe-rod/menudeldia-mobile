@@ -93,12 +93,12 @@
 }
 
 .menu-list .item-content {
-    padding-right: 15px;
+    padding-right: 5px;
 }
 
 .menuDetail .header-title{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-bottom: 0px;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -107,9 +107,16 @@
     /*padding: 0 8px 0 15px;*/
 }
 
-.menuDetail .header-title h4.menu-title{
+.menuDetail .header-title .menu-title h4{
     color: rgba(0, 0, 0, 0.87);
-    font-size: 20px;
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.menuDetail .header-title .menu-title .menu-price{
+    color: #d23f31;
+    font-size: 18px;
+    margin-top: 0;
 }
 
 .menuDetail .header-title .price{
@@ -127,6 +134,10 @@
     margin-top: 20px;
     padding: 10px 10px 0 10px;
     border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.menuDetail .divider.first-divider{
+    margin-top: 0px;
 }
 
 .menuDetail .divider .col{
@@ -279,6 +290,38 @@
  
  .square-image {
      border-radius: 0!important;
+ }
+ 
+ .small-price{
+     
+ }
+ 
+ .small-price span{
+     color: #d23f31;
+     font-size: 15px;
+     float: right;
+ }
+ 
+ span.distance .icon{
+     font-size: 15px;
+ }
+ span.distance{
+     font-size: 13px;
+     color:#a1a1a1;
+     margin-left: 5px;
+ }
+  
+  .combo{
+      margin-top:3px;
+  }
+  
+ .combo .icon-extra{
+     font-size: 14px;
+     background-color: #e4c613;
+     padding-left: 5px;
+     padding-right: 5px;
+     color: #fff;
+     border-radius: 3px;
  }
 
 

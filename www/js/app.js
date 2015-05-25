@@ -157,6 +157,8 @@ $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/)
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/menus');
+  
+  $ionicConfigProvider.scrolling.jsScrolling(false);
 
   $ionicConfigProvider.platform.ios.backButton.text('Volver');
 

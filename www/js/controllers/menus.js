@@ -25,6 +25,7 @@ angular.module('todayMenu')
                     Menus.all(pageCounter, pageSize, latitude, longitude)
                         .then(function (data) {
                             $scope.menus = data;
+                            debugger;
                             $scope.moreDataCanBeLoaded = (data.length == pageSize);
                             $ionicLoading.hide();
                         }, function () {

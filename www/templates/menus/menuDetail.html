@@ -1,14 +1,15 @@
 <ion-view view-title="{{menu.nearestLocation.restaurantName}}">
     <ion-content class="menuDetail" scroll="true">
         <div class="row header-title">
-            <div class="col-75 col-center">
-                <h4 class="menu-title">{{menu.name}}</h4>
+            <div class="col-20">
+                <img src="data:image/{{menu.logo.logoExtension}};base64,{{menu.logo.logoBase64}}"  height="50px" width="50px" />
             </div>
-            <div class="col-20 col-center price">
-                <h4>$ {{menu.price}}</h4>
+            <div class="col-80 menu-title">
+                <h4>{{menu.name}}</h4>
+                <h4 class="menu-price">${{menu.price}}</h4>
             </div>
         </div>
-        <div ng-show="menu.description.length" class="row divider">
+        <div ng-show="menu.description.length" class="row divider first-divider">
             <div class="col col-center">
                 DESCRIPCI&Oacute;N
             </div>
