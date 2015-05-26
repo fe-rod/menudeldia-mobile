@@ -11,7 +11,7 @@ angular.module('todayMenu')
 
         var latitude, longitude;
 
-        var posOptions = {timeout: 30000, enableHighAccuracy: true, maximumAge: 10000};
+        var posOptions = {timeout: 60000, enableHighAccuracy: true, maximumAge: 10000};
 
         $ionicPlatform.ready(function(){
             $cordovaGeolocation
@@ -65,7 +65,7 @@ angular.module('todayMenu')
         };
 
         $scope.refreshStores = function(){
-            var posOptions = {timeout: 10000, enableHighAccuracy: true, maximumAge: 10000};
+            var posOptions = {timeout: 60000, enableHighAccuracy: true, maximumAge: 10000};
             pageCounter = 0;
             $ionicPlatform.ready(function() {
                 $cordovaGeolocation

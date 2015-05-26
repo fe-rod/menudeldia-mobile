@@ -37,7 +37,15 @@ $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/)
   })
 
   // Each tab has its own nav history stack:
-
+      .state('app.map-location', {
+          url: '/maplocation',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/map/mapLocation.html',
+                  controller: 'MapLocationCtrl'
+              }
+          }
+      })
       .state('app.menus', {
           url: '/menus',
           views: {

@@ -4,7 +4,7 @@
                 pulling-text="Desliza hacia abajo para refrescar.."
                 on-refresh="refreshMenu()">
         </ion-refresher>
-        <ion-list can-swipe="true" ng-hide="geolocError">
+        <ion-list can-swipe="true">
             <ion-item collection-repeat="menu in menus" class="item item-text-wrap item-avatar menu-list" href="#/app/menu/{{menu.id}}"
                       item-height="128px">
                 <img class="square-image" src="data:image/{{menu.logo.logoExtension}};base64,{{menu.logo.logoBase64}}" />
@@ -41,12 +41,17 @@
                 <i class="icon ion-chatbubble-working"></i>
                 <p>Mientras tanto ayudanos sugiri&eacute;nos locales que te gusten</p>
             </ion-item>
+            <ion-item ng-if="geolocError" class="item item-text-wrap item-icon-left">
+                <i class="icon ion-sad-outline"></i>
+                    <p class="no-result-title">No se ha podido encontrar tu ubicaci&oacute;n.</p>
+                    <p>Puede que el GPS no est&eacute; funcionando correctamente.</p>
+            </ion-item>
+            <ion-item ng-if="geolocError" class="item item-text-wrap item-icon-left item-icon-right" ui-sref="app.map-location">
+                <i class="icon ion-location"></i>
+                    <p>Elegir mi ubicaci&oacute;n en el mapa</p>
+                    <i class="icon ion-ios-arrow-forward"></i>
+            </ion-item>
         </ion-list>
-        <div class="row" ng-if="geolocError">
-            <div class="col">
-                No se ha podido encontrar tu ubicaci&oacute;n. ({{gpsError}})
-            </div>
-        </div>
         <ion-infinite-scroll
                 ng-if="moreDataCanBeLoaded"
                 on-infinite="loadMore()"

@@ -13,7 +13,8 @@ angular.module('todayMenu')
             var mapOptions = {
                 center: myLatlng,
                 zoom: 16,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                options: {zoomControl: false, streetViewControl: false, mapTypeControl: false}
             };
             var map = new google.maps.Map(document.getElementById("map"),
                 mapOptions);
